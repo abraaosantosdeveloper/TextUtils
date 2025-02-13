@@ -133,19 +133,33 @@ def printTitleBar(text:str, boxColor = WHITE, textColor = WHITE):
 	gotoxy(x,2)
 	printColored(text, textColor)
 
-def printProgressBar(percentage:float, boxColor=WHITE, line= 27):
+#prints a progress bar on the selected line
+#the bar shows the percentage value from 0% to 100%
+#it assumes the default 120 x 30 windows console
+def printProgressBar(percentage:float,
+	line:int= 27,
+	boxColor = WHITE,
+	barColor=GREEN,
+	textColor = WHITE,
+	backgroundTextColor = BACKGROUND_GREEN):
+
+	if line < 0: return
+	if line > 27: return
+	if percentage < 0: percentage = 0
+	if percentage > 100: percentage = 100
+	
 	drawBox(1,line,120,3,boxColor)
 	
 	pins = int((percentage / 100) * 118)
 	for i in range(pins):
 		gotoxy(i+2, line+1)
-		printColored("█", GREEN)
+		printColored("█", barColor)
 
 	text = f"{percentage:.2f}%"
 	for j in range(len(text)):
 		gotoxy(58+j,line+1)
-		if(pins < 58+j): printColored(text[j], WHITE)
-		else: printColored(text[j], WHITE+BACKGROUND_GREEN)
+		if(pins < 58+j): printColored(text[j], textColor)
+		else: printColored(text[j], backgroundTextColor+textColor)
 
 
 # prints a dark gray status bar in the bottom of console with left aligned text...

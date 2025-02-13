@@ -17,6 +17,40 @@ BRIGHT_MAGENTA = '\033[95m'
 BRIGHT_CYAN = '\033[96m'
 WHITE = '\033[97m'
 
+BOLD_BLACK = '\033[1;30m'
+BOLD_RED = '\033[1;31m'
+BOLD_GREEN = '\033[1;32m'
+BOLD_YELLOW = '\033[1;33m' # orange on some systems
+BOLD_BLUE = '\033[1;34m'
+BOLD_MAGENTA = '\033[1;35m'
+BOLD_CYAN = '\033[1;36m'
+BOLD_LIGHT_GRAY = '\033[1;37m'
+BOLD_DARK_GRAY = '\033[1;90m'
+BOLD_BRIGHT_RED = '\033[1;91m'
+BOLD_BRIGHT_GREEN = '\033[1;92m'
+BOLD_BRIGHT_YELLOW = '\033[1;93m'
+BOLD_BRIGHT_BLUE = '\033[1;94m'
+BOLD_BRIGHT_MAGENTA = '\033[1;95m'
+BOLD_BRIGHT_CYAN = '\033[1;96m'
+BOLD_WHITE = '\033[1;97m'
+
+BACKGROUND_GRAY = '\033[40m'
+BACKGROUND_RED = '\033[41m'
+BACKGROUND_GREEN = '\033[42m'
+BACKGROUND_YELLOW = '\033[43m'
+BACKGROUND_BLUE = '\033[44m'
+BACKGROUND_MAGENTA = '\033[45m'
+BACKGROUND_CYAN = '\033[46m'
+BACKGROUND_LIGHT_GRAY = '\033[47m'
+BACKGROUND_DARK_GRAY = '\033[100m'
+BACKGROUND_BRIGHT_RED = '\033[101m'
+BACKGROUND_BRIGHT_GREEN = '\033[102m'
+BACKGROUND_BRIGHT_YELLOW = '\033[103m'
+BACKGROUND_BRIGHT_BLUE = '\033[104m'
+BACKGROUND_BRIGHT_MAGENTA = '\033[105m'
+BACKGROUND_BRIGHT_CYAN = '\033[106m'
+BACKGROUND_WHITE = '\033[107m'
+
 RESET = '\033[0m' # called to return to standard terminal text color
 
 # An alternative print function for colored text
@@ -98,6 +132,21 @@ def printTitleBar(text:str, boxColor = WHITE, textColor = WHITE):
 	drawBox(1,1,120,3,boxColor)
 	gotoxy(x,2)
 	printColored(text, textColor)
+
+def printProgressBar(percentage:float, boxColor=WHITE, line= 27):
+	drawBox(1,line,120,3,boxColor)
+	
+	pins = int((percentage / 100) * 118)
+	for i in range(pins):
+		gotoxy(i+2, line+1)
+		printColored("█", GREEN)
+
+	text = f"{percentage:.2f}%"
+	for j in range(len(text)):
+		gotoxy(58+j,line+1)
+		if(pins < 58+j): printColored(text[j], WHITE)
+		else: printColored(text[j], WHITE+BACKGROUND_GREEN)
+
 
 # prints a dark gray status bar in the bottom of console with left aligned text...
 # suport only text color...

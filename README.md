@@ -51,6 +51,8 @@ input()
 ```
 ![image](https://github.com/user-attachments/assets/112b50fa-657d-4282-ab2b-fe2548f74751)
 
+>>> You can also use it to choose where the user can input data...
+
 ## Drawing Boxes
 The box drawing functions can be used to made really cool interfaces in your console...
 The cordinate system starts at (1,1) (left, top) and, by default, ends at (120,30) (right, bottom) 120 columns and 30 rows, for a default console.

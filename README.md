@@ -7,7 +7,6 @@ with this module you can build cool interfaces to your basic console application
 
 
 ## Printing in colors
-
 This module has a lot of premade functions you can use to print in colors... the general use of those print functions are identical to the basic use of the standard print function.
 ```python
 print("Hello World")
@@ -28,6 +27,29 @@ if you want more freedom, you can compose your own color schemes using printColo
 printColored("Hello World", color= BACKGROUND_YELLOW + BLUE)
 ```
 ![image](https://github.com/user-attachments/assets/b357f7da-3959-4f3e-a22d-258d1e6821a7)
+
+## Clear the screen
+I know you probably know how to import os and use system("cls")... but i already did it for you....
+just call clearScreen() and there is no more... well... anything... in the screen...
+
+## Choosing where to print
+This function was named after the classic goToXY Pascal function, (yes, i'm that old...) and it basically moves the cursor in the console window.
+The cordinate system starts at (1,1) (left, top) and, by default, ends at (120,30) (right, bottom) 120 columns and 30 rows, for a default console.
+but you can resize your console at will.
+
+```python
+from TextUtils import *
+import random
+
+clearScreen()
+for i in range(100):
+    x = random.randint(1,120)
+    y = random.randint(1,30)
+    gotoxy(x,y)
+    print("*")
+input()
+```
+![image](https://github.com/user-attachments/assets/112b50fa-657d-4282-ab2b-fe2548f74751)
 
 ## Drawing Boxes
 The box drawing functions can be used to made really cool interfaces in your console...

@@ -1,7 +1,31 @@
 # TextUtils
 simple console helper module for noob python developers (like me)
 
-Example: creating a simple title Bar at the top of the console screen.
+## Printing in colors
+
+This module has a lot of premade functions you can use to print in colors... the general use of those print functions are identical to the basic use of the standard print function.
+```
+print("Hello World")
+printBlack("Hello World")
+printBlue("Hello World")
+printYellow("Hello World")
+printRed("Hello World")
+printGreen("Hello World")
+printBrightBlue("Hello World")
+printBrightCyan("Hello World")
+printBrightGreen("Hello World")
+printBrightMagenta("Hello World")
+```
+![image](https://github.com/user-attachments/assets/e7c17dfa-88f2-4755-ba39-f9dd4590d21e)
+
+if you want more freedom, you can compose your own color schemes using printColored function:
+```
+printColored("Hello World", color= BACKGROUND_YELLOW + BLUE)
+```
+![image](https://github.com/user-attachments/assets/b357f7da-3959-4f3e-a22d-258d1e6821a7)
+
+
+## Creating Title Bar at the top of the console screen.
 ```
 from TextUtils import *
 clearScreen()

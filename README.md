@@ -24,6 +24,27 @@ printColored("Hello World", color= BACKGROUND_YELLOW + BLUE)
 ```
 ![image](https://github.com/user-attachments/assets/b357f7da-3959-4f3e-a22d-258d1e6821a7)
 
+## Drawing Boxes
+The box drawing functions can be used to made really cool interfaces in your console...
+The cordinate system starts at (1,1) (left, top) and, by default, ends at (120,30) (right, bottom) 120 columns and 30 rows, for a default console.
+but you can resize your console at will.
+
+The parameters are x, y, width, height, and optionally color... (default is white)
+
+```python
+#default box drawing function...
+drawBox(1,1,10,10,color=YELLOW , charSet=SIMPLE_BORDER_CHARSET)
+
+#specialized functions
+drawSimpleBorderBox(12,1,10,10,color=RED)
+drawHeavyBorderBox(23,1,10,10,color=GREEN)
+drawBroadBorderBox(34,1,10,10,color=BLUE)
+drawRoundBorderBox(45,1,10,10,color=MAGENTA)
+drawDoubleBorderBox(56,1,10,10,color=CYAN)
+```
+
+![image](https://github.com/user-attachments/assets/73d5af27-2e4b-4b2b-b33d-d2f2551dfb67)
+
 
 ## Creating Title Bar at the top of the console screen.
 ```python

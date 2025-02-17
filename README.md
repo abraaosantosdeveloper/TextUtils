@@ -1,6 +1,11 @@
 # TextUtils
 simple console helper module for noob python developers (like me)
 
+with this module you can build cool interfaces to your basic console applications, or even build nice little games with it...
+![image](https://github.com/user-attachments/assets/c62e94af-da5d-424d-b194-54056a32331f)
+![image](https://github.com/user-attachments/assets/1e3f14e1-2b38-4c49-8eb4-a61796eea6ba)
+
+
 ## Printing in colors
 
 This module has a lot of premade functions you can use to print in colors... the general use of those print functions are identical to the basic use of the standard print function.
